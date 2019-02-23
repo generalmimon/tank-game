@@ -1,0 +1,68 @@
+<html>
+<head>
+	<title>Simple tank game</title>
+	<meta charset="utf-8">
+	<style>
+		body {
+			font-family: "Trebuchet MS";
+			margin: 1em;
+			padding: 0;
+			transition: padding .5s;
+		}
+		kbd {
+			border: 1px solid #000;
+			border-radius: 2px;
+			padding: 1px 5px;
+		}
+		.game {
+			overflow: hidden;
+			float: left;
+		}
+		canvas, .score {
+			float: left;
+		}
+		.score, .alert-box-content {
+			padding: 0 .8em;
+			line-height: 2.5em;
+			background-color: #ddd;
+		}
+		.controls {
+			border: 1px solid #000;
+			display: inline-block;
+			padding: 1em;
+			float: right;
+		}
+		.alert-box {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			overflow: hidden;
+			height: 0;
+			transition: height .5s;
+		}
+		.alert-box-visible {
+			padding-top: 3em;
+		}
+		.alert-box-visible .alert-box {
+			height: 3em;
+		}
+	</style>
+</head>
+<body>
+	<h1>Simple tank game</h1>
+	<div class="game">
+		<canvas id="gameCanvas" style="border: 1px solid black;"></canvas>
+		<span class="score">Targets left: <span id="targetsLeft"></span></span>
+	</div>
+	<div class="controls">
+		<h2>Controls</h2>
+		<p><kbd>↑</kbd> <kbd>↓</kbd> – move forward/backward</p>
+		<p><kbd>←</kbd> <kbd>→</kbd> – rotate left/right</p>
+		<p><kbd>Space</kbd> – fire</p>
+	</div>
+	<div class="alert-box"><div class="alert-box-content" id="alertBoxContent">Lorem ipsum dolor sit amet, consequentur aria of.</div></div>
+	<script src="collision.js"></script>
+	<script src="game.js"></script>
+</body>
+</html>
