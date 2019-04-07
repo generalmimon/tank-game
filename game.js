@@ -2,8 +2,6 @@ var canv = document.getElementById("gameCanvas"),
 	alertBoxContent = document.getElementById("alertBoxContent"),
 	targetsLeft = document.getElementById("targetsLeft");
 	c = canv.getContext("2d");
-canv.width = 600;
-canv.height = 400;
 var pressedKeys = {},
 KEYS = {
 	ARROW_LEFT: 37,
@@ -83,6 +81,7 @@ target = {
 	layerR: 4,
 	colors: ["red", "white"]
 };
+targetsLeft.innerHTML = (targets.length).toString();
 var turrets = [
 	{x: 150, y: 100, rot: 0, w: 7, r: 10, l: 20, fireTimeout: 0, color: "#f32"},
 	{x: 450, y: 100, rot: 0, w: 7, r: 10, l: 20, fireTimeout: 0, color: "#0f0"},
@@ -315,7 +314,7 @@ function serveBullets() {
 }
 function serveTargets() {
 	if(targets.length === 0) return true;
-	var ifExists;
+	var ifExists, numberChanged = false;
 	for(var i = targets.length - 1; i >= 0; i--) {
 		ifExists = true;
 		for(var j = 0, blen = bullets.length; j < blen; j++) {
@@ -323,12 +322,13 @@ function serveTargets() {
 				targets.splice(i, 1);
 				bullets.splice(j, 1);
 				ifExists = false;
+				numberChanged = true;
 				break;
 			}
 		}
 		if(ifExists) drawTarget(targets[i]);
 	}
-	targetsLeft.innerHTML = (targets.length).toString();
+	if(numberChanged) targetsLeft.innerHTML = (targets.length).toString();
 	if(targets.length === 0) {
 		alertMessage("Congratulations! You've hit all the targets!", "#2ecc40");
 	}

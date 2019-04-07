@@ -6,8 +6,7 @@
 		body {
 			font-family: "Trebuchet MS";
 			margin: 1em;
-			padding: 0;
-			transition: padding .5s;
+			padding: 2em;
 		}
 		kbd {
 			border: 1px solid #000;
@@ -38,21 +37,18 @@
 			left: 0;
 			width: 100%;
 			overflow: hidden;
-			height: 0;
-			transition: height .5s;
-		}
-		.alert-box-visible {
-			padding-top: 3em;
+			opacity: 0;
+			transition: opacity .5s;
 		}
 		.alert-box-visible .alert-box {
-			height: 3em;
+			opacity: 1;
 		}
 	</style>
 </head>
 <body>
 	<h1>Simple tank game</h1>
 	<div class="game">
-		<canvas id="gameCanvas" style="border: 1px solid black;"></canvas>
+		<canvas id="gameCanvas" style="border: 1px solid black;" width="600" height="400"></canvas>
 		<span class="score">Targets left: <span id="targetsLeft"></span></span>
 	</div>
 	<div class="controls">
