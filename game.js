@@ -1,3 +1,9 @@
+/*
+ * SPDX-FileCopyrightText: 2019 Petr Pucil <petr.pucil@seznam.cz>
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
 var canv = document.getElementById("gameCanvas"),
 	alertBoxContent = document.getElementById("alertBoxContent"),
 	targetsLeft = document.getElementById("targetsLeft");

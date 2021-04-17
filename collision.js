@@ -1,3 +1,10 @@
+/*
+ * SPDX-FileCopyrightText: 2018 Andrew Sevenson <andrew@sevenson.com.au>
+ * SPDX-FileCopyrightText: 2019 Petr Pucil <petr.pucil@seznam.cz>
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
 var Vector = function(p1, p2) {
 	this.x = (p1 && p2) ? p2.x-p1.x : (p1 ? p1.x : 0);
 	this.y = (p1 && p2) ? p2.y-p1.y : (p1 ? p1.y : 0);
